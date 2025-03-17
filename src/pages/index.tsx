@@ -153,21 +153,26 @@ const CurrencyExchangeGraph = ({ exchangeData, error }: PageProps) => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 md:p-8">
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl relative">
         {/* Language toggle in top right */}
-        <div className="absolute top-4 right-4 flex flex-col items-end space-y-2 z-10">
-          <p className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
-            {t.currentLanguage}
-          </p>
-          <button
-            onClick={toggleLanguage}
-            className="bg-indigo-600 text-white px-4 py-1 rounded-md text-sm font-medium hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors"
-          >
-            {t.switchLanguage}
-          </button>
-        </div>
-
         <div className="p-4 md:p-6">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">{t.pageTitle}</h1>
-          <p className="text-gray-600 mb-6">{t.subtitle}</p>
+          {/* Header with responsive flex layout */}
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+            <div className="mb-4 sm:mb-0 sm:pr-0">
+              <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">{t.pageTitle}</h1>
+              <p className="text-gray-600">{t.subtitle}</p>
+            </div>
+
+            <div className="flex flex-row sm:flex-col space-x-2 items-end sm:space-y-2 z-10">
+              <p className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full whitespace-nowrap">
+                {t.currentLanguage}
+              </p>
+              <button
+                onClick={toggleLanguage}
+                className="bg-indigo-600 text-white px-4 py-1 rounded-md text-sm font-medium hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-colors whitespace-nowrap"
+              >
+                {t.switchLanguage}
+              </button>
+            </div>
+          </div>
 
           <div className="h-64 md:h-80 w-full mb-6">
             <ResponsiveContainer width="100%" height="100%">
