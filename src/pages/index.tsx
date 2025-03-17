@@ -92,11 +92,11 @@ const CurrencyExchangeGraph = ({ exchangeData, error }: PageProps) => {
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">CNY to AUD Exchange Rate</h1>
           <p className="text-gray-600 mb-6">Latest 10 records showing buying and selling rates</p>
 
-          <div className="h-64 md:h-80 w-full">
+          <div className="h-64 md:h-80 w-full mb-6">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart
                 data={exchangeData}
-                margin={{ top: 10, right: 30, left: 20, bottom: 30 }}
+                margin={{ top: 10, right: 10, left: 5, bottom: 30 }}
               >
                 <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
                 <XAxis
@@ -113,7 +113,10 @@ const CurrencyExchangeGraph = ({ exchangeData, error }: PageProps) => {
                   tickSize={5}
                   tickMargin={8}
                   domain={[minRate, maxRate]}
-                  label={{ value: 'Rate (CNY)', angle: -90, position: 'insideLeft', style: { textAnchor: 'middle', fill: '#6b7280' } }}
+                  label={{
+                    value: 'Rate (CNY)', angle: -90, position: 'insideLeft',
+                    style: { textAnchor: 'middle', fill: '#6b7280', fontSize: 14, fontWeight: 'bold' }
+                  }}
                 />
                 <Tooltip
                   contentStyle={{
@@ -129,10 +132,10 @@ const CurrencyExchangeGraph = ({ exchangeData, error }: PageProps) => {
                 <Line
                   type="monotone"
                   dataKey="buying_rate"
-                  stroke="#4f46e5"
+                  stroke="#494e84"
                   strokeWidth={3}
-                  dot={{ fill: '#4f46e5', strokeWidth: 2, r: 4 }}
-                  activeDot={{ r: 6, fill: '#4338ca' }}
+                  dot={{ fill: '#494e84', strokeWidth: 2, r: 4 }}
+                  activeDot={{ r: 6, fill: '#da9100' }}
                   animationDuration={1500}
                   animationEasing="ease-in-out"
                   name="Buying Rate"
@@ -140,10 +143,10 @@ const CurrencyExchangeGraph = ({ exchangeData, error }: PageProps) => {
                 <Line
                   type="monotone"
                   dataKey="selling_rate"
-                  stroke="#ef4444"
+                  stroke="#dd164c"
                   strokeWidth={3}
-                  dot={{ fill: '#ef4444', strokeWidth: 2, r: 4 }}
-                  activeDot={{ r: 6, fill: '#dc2626' }}
+                  dot={{ fill: '#dd164c', strokeWidth: 2, r: 4 }}
+                  activeDot={{ r: 6, fill: '#da9100' }}
                   animationDuration={1500}
                   animationEasing="ease-in-out"
                   name="Selling Rate"
