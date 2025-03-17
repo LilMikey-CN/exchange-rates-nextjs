@@ -156,10 +156,10 @@ const CurrencyExchangeGraph = ({ exchangeData, error }: PageProps) => {
           </div>
 
           <div className="mt-6 text-sm text-gray-500 p-2 bg-gray-50 rounded-lg">
-            <p>• Blue line: Bank's buying rate (how much CNY you get when selling 100 AUD)</p>
-            <p>• Red line: Bank's selling rate (how much CNY you need to buy 100 AUD)</p>
+            <p>• Bank's buying rate: how much CNY you get when selling 100 AUD</p>
+            <p>• Bank's selling rate: how much CNY you need to buy 100 AUD</p>
             <p>• Hover over points to see exact values</p>
-            <p>• Data source: Bank of China</p>
+            <p>• Data source: BOC - Bank of China</p>
           </div>
         </div>
       </div>
